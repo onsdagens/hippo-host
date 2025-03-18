@@ -29,3 +29,6 @@ Arguments:
   [PATH]  Path to file containing bytes to be written [default: ./example_bytes]
 ```
 
+## TODO
+
+The end goal for this is to provide a cargo subcommand that builds a crate and automatically flashes it to Hippo. For now this is future work.
