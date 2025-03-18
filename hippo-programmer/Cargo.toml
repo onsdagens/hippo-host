@@ -1,0 +1,11 @@
+[package]
+name = "hippo-programmer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.32", features = ["derive"] }
+clap-num = "1.2.0"
+
+ftdaye = {git="https://github.com/onsdagens/ftdaye"}
+nusb = "0.1.13"
