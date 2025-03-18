@@ -4,11 +4,11 @@ Simple tool for writing bytes to the Hippomenes programmer.
 
 ## Setting up
 
-All that is really needed is the Rust toolchain. For more instructions refer to (install Rust)[https://www.rust-lang.org/tools/install].
+All that is really needed is the Rust toolchain. For more instructions refer to [install Rust](https://www.rust-lang.org/tools/install).
 
 ## Running
 
-The simplest possible example, assuming a Digilent Arty A7 board flashed with latest (Hippo programmer example)[https://github.com/onsdagens/hippo-programmer],
+The simplest possible example, assuming a Digilent Arty A7 board flashed with latest [Hippo programmer example](https://github.com/onsdagens/hippo-programmer),
 is just using 
 
 ```
