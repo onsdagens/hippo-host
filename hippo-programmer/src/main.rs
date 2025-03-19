@@ -122,8 +122,6 @@ fn write_elf(
             );
         }
     }
-
     imem_vec.append(&mut dmem_vec);
-
     write_bytes(mpsse, &imem_vec);
 }
