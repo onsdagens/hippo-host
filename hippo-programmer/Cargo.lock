@@ -240,6 +240,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "elf"
+version = "0.7.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4445909572dbd556c457c849c4ca58623d84b27c8fff1e74b0b4227d8b90d17b"
+
+[[package]]
 name = "env_logger"
 version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -362,6 +368,7 @@ dependencies = [
  "clap-num",
  "ftdaye",
  "nusb",
+ "riscv-elf-parse",
 ]
 
 [[package]]
@@ -553,6 +560,21 @@ name = "regex-syntax"
 version = "0.8.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
+
+[[package]]
+name = "riscv-elf-parse"
+version = "0.1.0"
+source = "git+https://github.com/onsdagens/riscv-elf-parse#9fdece195e5bf3536c08b7f3c1f5ae8540beccce"
+dependencies = [
+ "elf",
+ "riscv32i-isa",
+ "xmas-elf",
+]
+
+[[package]]
+name = "riscv32i-isa"
+version = "0.1.0"
+source = "git+https://github.com/onsdagens/riscv32i-isa#b3d687ab90898eab8a08b3b29ba571a1ec352bc7"
 
 [[package]]
 name = "rustix"
@@ -812,3 +834,18 @@ checksum = "05f360fc0b24296329c78fda852a1e9ae82de9cf7b27dae4b7f62f118f77b9ed"
 dependencies = [
  "tap",
 ]
+
+[[package]]
+name = "xmas-elf"
+version = "0.9.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "42c49817e78342f7f30a181573d82ff55b88a35f86ccaf07fc64b3008f56d1c6"
+dependencies = [
+ "zero",
+]
+
+[[package]]
+name = "zero"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2fe21bcc34ca7fe6dd56cc2cb1261ea59d6b93620215aefb5ea6032265527784"
