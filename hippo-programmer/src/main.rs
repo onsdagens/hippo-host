@@ -26,8 +26,7 @@ struct Args {
 
     /// Path to file containing bytes to be written
     #[arg(short, long)]
-    #[clap(default_value = "./example_bytes")]
-    path: PathBuf,
+    path: Option<PathBuf>,
 
     /// Path to ELF file
     #[arg(short, long)]
@@ -73,17 +72,21 @@ fn main() {
             args.dmem_size,
             args.dmem_start,
         );
+    } else if let Some(path) = args.path {
+        write_file(&mut mpsse, &path);
     } else {
-        write_raw_bytes(&mut mpsse, &args.path);
+        write_raw_bytes(&mut mpsse, &[0xDE, 0xAD, 0xBE, 0xEF]);
     }
 }
-
-fn write_raw_bytes(mpsse: &mut FtdiMpsse, path: &PathBuf) {
+fn write_file(mpsse: &mut FtdiMpsse, path: &PathBuf) {
     let mut bytes = vec![];
 
     File::open(path).unwrap().read_to_end(&mut bytes).unwrap();
 
     write_bytes(mpsse, &bytes);
+}
+fn write_raw_bytes(mpsse: &mut FtdiMpsse, bytes: &[u8]) {
+    write_bytes(mpsse, bytes);
 }
 
 fn write_elf(
