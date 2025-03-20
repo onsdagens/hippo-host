@@ -22,11 +22,18 @@ Once the programmer has been integrated with Hippomenes, we will instead include
 ## Options
 
 ```
-Arguments:
-  [VID]   VID of the target board [default: 0x0403]
-  [PID]   PID of the target board [default: 0x6010]
-  [FREQ]  Interface Frequency (kHz) [default: 1000]
-  [PATH]  Path to file containing bytes to be written [default: ./example_bytes]
+Usage: hippo-programmer [OPTIONS]
+Options:
+  -v, --vid <VID>                VID of the target board [default: 0x0403]
+      --pid <PID>                PID of the target board [default: 0x6010]
+  -f, --freq <FREQ>              Interface Frequency (kHz) [default: 1000]
+  -p, --path <PATH>              Path to file containing bytes to be written
+  -e, --elf <ELF>                Path to ELF file
+  -i, --imem-size <IMEM_SIZE>    Size of instruction memory (bytes). The passed ELF text section will be padded with zeroes to that size [default: 4096]
+      --imem-start <IMEM_START>  Starting address of the instruction memory. Hippomenes defaults to 0x0 [default: 0]
+      --dmem-start <DMEM_START>  Starting address of the data memory. Hippomenes defaults to 0x5000_0000 [default: 0x50000000]
+  -d, --dmem-size <DMEM_SIZE>    Size of data memory (bytes). The data in the passed ELF file will be padded with zeroes to that size [default: 4096]
+  -h, --help                     Print help
 ```
 
 ## TODO
